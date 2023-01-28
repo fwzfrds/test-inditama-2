@@ -1,7 +1,6 @@
 import instance from '../../utils/axios/instance'
 
 export const index = async () => {
-    // localStorage.setItem('authToken', 'Bearer 128|MYuWj6Qsxk91SH2fGSpo5bl5bh1a2AcjzUVaJ7eD')
     const response = await instance({
         url: "product",
         method: "GET"
@@ -11,7 +10,6 @@ export const index = async () => {
 }
 
 export const detail = async (productID) => {
-    // localStorage.setItem('authToken', 'Bearer 128|MYuWj6Qsxk91SH2fGSpo5bl5bh1a2AcjzUVaJ7eD')
     const response = await instance({
         url: `product/show?product_id=${productID}`,
         method: "GET"
@@ -21,7 +19,6 @@ export const detail = async (productID) => {
 }
 
 export const addProduct = async (data) => {
-    // localStorage.setItem('authToken', 'Bearer 128|MYuWj6Qsxk91SH2fGSpo5bl5bh1a2AcjzUVaJ7eD')
     const response = await instance({
         url: "product/store",
         method: "POST",
@@ -32,7 +29,6 @@ export const addProduct = async (data) => {
 }
 
 export const update = async (data) => {
-    localStorage.setItem('authToken', 'Bearer 128|MYuWj6Qsxk91SH2fGSpo5bl5bh1a2AcjzUVaJ7eD')
     const response = await instance({
         url: "product/update",
         method: "POST",
@@ -43,7 +39,6 @@ export const update = async (data) => {
 }
 
 export const delProduct = async (productID) => {
-    localStorage.setItem('authToken', 'Bearer 128|MYuWj6Qsxk91SH2fGSpo5bl5bh1a2AcjzUVaJ7eD')
     const response = await instance({
         url: `product/${productID}`,
         method: "DELETE"
