@@ -48,12 +48,18 @@ const LoginForm = () => {
 
         try {
             const response = await login(formData)
-            
+
             const data = response.data.data
             if (data) {
                 const token = `Bearer ${data.token}`
                 localStorage.setItem('authToken', token)
                 router.push('/')
+            }
+
+            if (response.data.message == 'Password salah !') {
+                errorDataForms = formErrors
+                errorDataForms.password = 'Wrong Password!'
+                setFormErrors(errorDataForms)
             }
 
             swal({
